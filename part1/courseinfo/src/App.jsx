@@ -1,50 +1,104 @@
-const Header = (props) => {
-  return <h1>{props.course}</h1>
-}
+import { useState } from 'react'
 
-const Part = (props) => {
-  return <p>{props.part} {props.exercises}</p>
-}
+const Filter = ({ filter, handleFilterChange }) => (
+  <div>
+    filter shown with: <input value={filter} onChange={handleFilterChange} />
+  </div>
+)
 
-const Content = (props) => {
-  return (
+const PersonForm = ({
+  newPerson,
+  handleNameChange,
+  handleNumberChange,
+  addPerson
+}) => (
+  <form onSubmit={addPerson}>
     <div>
-      <Part part={props.parts[0].name} exercises= {props.parts[0].exercises} />
-      <Part part={props.parts[1].name} exercises= {props.parts[1].exercises} />
-      <Part part={props.parts[2].name} exercises= {props.parts[2].exercises} />
+      name: <input value={newPerson.name} onChange={handleNameChange} />
     </div>
-  )
-}
+    <div>
+      number: <input value={newPerson.number} onChange={handleNumberChange} />
+    </div>
+    <div>
+      <button type="submit">add</button>
+    </div>
+  </form>
+)
 
-const Total = (props) => {
-  return (
-    <p>Number of exercises {props.parts[0].exercises + props.parts[1].exercises + props.parts[2].exercises}</p>
-  )
-}
+const Persons = ({ persons }) => (
+  <>
+    {persons.map(person => (
+      <p key={person.id}>{person.name} {person.number}</p>
+    ))}
+  </>
+)
 
 const App = () => {
- const course = {
-    name: 'Half Stack application development',
-    parts: [
-      {
-        name: 'Fundamentals of React',
-        exercises: 10
-      },
-      {
-        name: 'Using props to pass data',
-        exercises: 7
-      },
-      {
-        name: 'State of a component',
-        exercises: 14
-      }
-    ]
+  const [persons, setPersons] = useState([
+    { name: 'Arto Hellas', number: '040-123456', id: 1 },
+    { name: 'Ada Lovelace', number: '39-44-5323523', id: 2 },
+    { name: 'Dan Abramov', number: '12-43-234345', id: 3 },
+    { name: 'Mary Poppendieck', number: '39-23-6423122', id: 4 }
+  ])
+  const [newPerson, setNewPerson] = useState({ name: '', number: '' })
+  const [filter, setFilter] = useState('')
+
+  const handleNameChange = (event) => {
+    setNewPerson({ ...newPerson, name: event.target.value })
   }
-return (
+
+  const handleNumberChange = (event) => {
+    setNewPerson({ ...newPerson, number: event.target.value })
+  }
+
+  const handleFilterChange = (event) => {
+    setFilter(event.target.value)
+  }
+
+  const addPerson = (event) => {
+    event.preventDefault()
+
+    const nameExists = persons.some(
+      person => person.name === newPerson.name
+    )
+
+    if (nameExists) {
+      alert(`${newPerson.name} ya existe en la agenda telefónica`)
+      return
+    }
+
+    const personObject = {
+      name: newPerson.name,
+      number: newPerson.number,
+      id: persons.length + 1
+    }
+
+    setPersons(persons.concat(personObject))
+    setNewPerson({ name: '', number: '' })
+  }
+
+  const personsToShow = persons.filter(person =>
+    person.name.toLowerCase().includes(filter.toLowerCase())
+  )
+
+  return (
     <div>
-      <Header course={course.name} />
-      <Content parts={course.parts} />
-      <Total parts={course.parts} />
+      <h2>Phonebook</h2>
+
+      <Filter filter={filter} handleFilterChange={handleFilterChange} />
+
+      <h3>Add a new</h3>
+
+      <PersonForm
+        newPerson={newPerson}
+        handleNameChange={handleNameChange}
+        handleNumberChange={handleNumberChange}
+        addPerson={addPerson}
+      />
+
+      <h3>Numbers</h3>
+
+      <Persons persons={personsToShow} />
     </div>
   )
 }
