@@ -6,11 +6,14 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
   },
+  "type": "module",
   "author": "Alfredo Mompó",
   "license": "ISC",
   "dependencies": {
+    "@stylistic/eslint-plugin": "^5.2.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
@@ -18,6 +21,9 @@
     "morgan": "^1.10.1"
   },
   "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
     "nodemon": "^3.1.10"
   }
 }

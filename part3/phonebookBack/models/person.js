@@ -10,7 +10,7 @@ console.log('connecting to', url)
 
 mongoose.connect(url)
 
-  .then(result => {
+  .then(() => {
     console.log('connected to MongoDB')
   })
   .catch(error => {
@@ -29,9 +29,9 @@ const personSchema = new mongoose.Schema({
     validate: {
       validator: function(v) {
         //don't exist or < 8
-        if (!v || v.length < 8) return false;
+        if (!v || v.length < 8) return false
         //NN-NNNNN o NNN-NNNNN...
-        return /^\d{2,3}-\d+$/.test(v);
+        return /^\d{2,3}-\d+$/.test(v)
       },
       message: props => `${props.value} is not a valid phone number! Expected format: 09-1234556 or 040-22334455`
     }
