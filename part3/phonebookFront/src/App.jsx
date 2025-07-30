@@ -94,6 +94,7 @@ const App = () => {
             setTimeout(() => {
               seterrorMessage(null)
             }, 5000)
+            console.log(error.response.data.error)
           })
       }
       return // salir para no ejecutar la creación abajo
@@ -128,6 +129,7 @@ const App = () => {
         setTimeout(() => {
           seterrorMessage(null)
         }, 5000)
+        console.log(error.response.data.error)
 
         })
     }
