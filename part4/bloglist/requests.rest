@@ -1,0 +1,43 @@
+### CREATE USER
+POST http://localhost:3001/api/users
+Content-Type: application/json
+
+{
+  "username": "testerC",
+  "name": "Tester C",
+  "password": "testerC"
+}
+
+### GET USERS
+GET http://localhost:3001/api/users
+
+### GET BLOGS
+GET http://localhost:3001/api/blogs
+
+### LOGIN
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "testerC",
+  "password": "testerC"
+}
+
+### CREATE BLOG
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlckMiLCJpZCI6IjY4OGY1MzdlZDk3ZGQzNDljNWJjNGJmZiIsImlhdCI6MTc1NDIyMzQ5NH0.yhwVOICDQLOppJ2VSRWOmwE7IcfHHo8CK77R1dtVx6Y
+
+{
+  "title": "test Blog Tester D",
+  "author": "testerC",
+  "url": "http://aiplan.ess",
+  "likes": 3
+}
+
+### DELETE BLOG
+DELETE http://localhost:3001/api/blogs/688f5493aa48b816da3a94c7
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RlckMiLCJpZCI6IjY4OGY1MzdlZDk3ZGQzNDljNWJjNGJmZiIsImlhdCI6MTc1NDIyMzQ5NH0.yhwVOICDQLOppJ2VSRWOmwE7IcfHHo8CK77R1dtVx6Y
+
+
+
