@@ -10,7 +10,7 @@ A lo largo del curso, he trabajado en la **construcción de aplicaciones complet
 - Redux
 - React Query y Context
 - React Router
-- JavaScript moderno y TypeScript
+- JavaScript moderno
 - Node.js y Express
 - MongoDB y Mongoose
 - RESTful APIs
