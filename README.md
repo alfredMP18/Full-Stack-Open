@@ -26,7 +26,7 @@ A lo largo del curso, he trabajado en la **construcción de aplicaciones complet
 
 ---
 
-## 🚀 ¿Por qué este curso es relevante?
+## ¿Por qué este curso es relevante?
 
 - Es uno de los programas más actualizados en desarrollo web moderno.
 - Enseña el stack más demandado actualmente.
@@ -35,7 +35,7 @@ A lo largo del curso, he trabajado en la **construcción de aplicaciones complet
 
 ---
 
-## 📋 Requisitos previos
+## Requisitos previos
 
 - Buenas habilidades de programación.
 - Conocimientos básicos de programación web y bases de datos.
@@ -46,7 +46,7 @@ Además, se recomienda tener **fluidez en un lenguaje de programación**, lo cua
 
 ---
 
-## 🎯 Progreso y logros
+## Progreso y logros
 
 Este repositorio recoge **el curso completo (Partes 0 a 7)** con **todos mis proyectos** realizados para completar los ejercicios (138 ejercicios en total).  
 Resultado:
@@ -59,7 +59,7 @@ Resultado:
 
 ---
 
-## 📂 Contenido por partes
+## Contenido por partes
 
 ### **Parte 0 – Fundamentos del desarrollo web**
 
@@ -167,7 +167,7 @@ Regresamos al frontend para:
 
 ---
 
-## 📊 Resumen de horas invertidas
+## Resumen de horas invertidas
 
 | Parte     | Horas         |
 | --------- | ------------- |
